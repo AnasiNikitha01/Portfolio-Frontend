@@ -27,7 +27,7 @@ export default function Chat() {
        
        console.log(Name,Message);
 
-    const results = await fetch('http://localhost:5000/messages',{
+    const results = await fetch('https://portfolio-backend-n2s7.onrender.com/messages',{
           method : 'POST',
           headers:{
             'Content-Type' : 'application/json',
