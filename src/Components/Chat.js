@@ -19,6 +19,10 @@ export default function Chat() {
    var style2 = { 
     display : Style2
    }
+   
+   var spinner= { 
+    display : Spinner
+   }
   
 
  async function Send(event){
@@ -74,7 +78,7 @@ export default function Chat() {
             <textarea className='Message' placeholder='Leave your message here...' value={Message} onChange={event=>SetMessage(event.target.value)} required></textarea>
 
             <button className='send-btn button-89'><span className={Display}>Send</span><i className="fa-solid fa-truck-arrow-right" id={Animate}></i>
-            <div className="spinner-border text-secondary" role="status">
+            <div style={spinner} className="spinner-border text-secondary" role="status">
   <span class="visually-hidden">Loading...</span>
 </div>
 </button>
