@@ -31,7 +31,6 @@ export default function Chat() {
        SetDisplay('Display');
 
        
-       console.log(Name,Message);
 
     const results = await fetch('https://portfolio-backend-n2s7.onrender.com/messages',{
           method : 'POST',
@@ -53,7 +52,6 @@ export default function Chat() {
  
        if(results.status === 201){
            results.json().then(data=>{
-              console.log(data);
               setTimeout(()=>{
                 SetStyle1('none');
                 SetStyle2('flex');
