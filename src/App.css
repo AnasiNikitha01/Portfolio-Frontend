@@ -478,7 +478,7 @@ body {
     height: 400px;
     background: linear-gradient(45deg, rgba(58, 57, 57, 0.959), rgba(44, 44, 44, 0.966));
     border: 3px solid rgba(143, 142, 142, 0.308);
-    border-radius: 20px;
+    /* border-radius: 20px; */
 }
 
 

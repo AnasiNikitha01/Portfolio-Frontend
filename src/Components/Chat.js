@@ -10,6 +10,7 @@ export default function Chat() {
 
   const [Style1,SetStyle1] = useState('flex');
   const [Style2,SetStyle2] = useState('none');
+  const [Spinner,SetSpinner] = useState('none');
 
    var style1 = {
       display : Style1
@@ -24,6 +25,7 @@ export default function Chat() {
        event.preventDefault();
        SetAnimate('animate');
        SetDisplay('Display');
+
        
        console.log(Name,Message);
 
@@ -39,6 +41,11 @@ export default function Chat() {
             Message
           })
        })
+      setTimeout(()=>{
+               if(results.status != 201){
+          SetSpinner('block')
+       }
+      },[2000]);
  
        if(results.status === 201){
            results.json().then(data=>{
@@ -66,7 +73,11 @@ export default function Chat() {
 
             <textarea className='Message' placeholder='Leave your message here...' value={Message} onChange={event=>SetMessage(event.target.value)} required></textarea>
 
-            <button className='send-btn button-89'><span className={Display}>Send</span><i className="fa-solid fa-truck-arrow-right" id={Animate}></i></button>
+            <button className='send-btn button-89'><span className={Display}>Send</span><i className="fa-solid fa-truck-arrow-right" id={Animate}></i>
+            <div className="spinner-border text-secondary" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+</button>
          </form>
          </div>
 
